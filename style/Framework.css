@@ -929,8 +929,8 @@ body {
     display: flex;
   }
 
-  .media .lg-post .intro {
-    width: 100%;
+  .lg-post {
+    border: none;
   }
 
   /* MOBILE #navbar */

@@ -74,18 +74,33 @@ $(".nav-btn").onclick = () => {
 
 // show totop button ***************************************
 window.onscroll = () => {
+   // Show To Top Button
   if (window.scrollY > 700) {
     $(".totop").classList.add("show");
   } else {
     $(".totop").classList.remove("show");
   }
-
+  
+   // Window Custome Scroll Bar
   if (window.scrollY > 50) {
     scrollIndicator();
     $(".scroll-indicator").style.display = "block";
   } else {
     $(".scroll-indicator").style.display = "none";
   }
+  
+    // Posts Animation On Scroll
+  let posts = document.querySelectorAll(".post");
+  posts.forEach((post) => {
+    if (
+      post.getBoundingClientRect().top <=
+      document.documentElement.clientHeight / 1
+    ) {
+      post.classList.add("scrolled");
+    } else {
+      post.classList.remove("scrolled");
+    }
+  });
 };
 
 $(".totop").onclick = () => {
